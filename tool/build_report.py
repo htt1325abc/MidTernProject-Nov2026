@@ -558,8 +558,9 @@ def build() -> None:
 
     page_break(doc)
     heading(doc, "Thêm hồ sơ và chọn ảnh", 2)
-    add_body(doc, "Form thêm mới yêu cầu đủ họ tên, email và mật khẩu. Nút Chọn ảnh mở bộ chọn tệp trên Web hoặc thư viện ảnh trên Android. Ảnh được giảm kích thước và nén trước khi chuyển thành data URI để ghi vào trường hinhanh.")
-    add_figure(doc, "03-them-nguoi-dung.png", "Hình 4  Form thêm người dùng và chức năng chọn ảnh", width=5.95)
+    add_body(doc, "Form thêm mới yêu cầu đủ họ tên, email và mật khẩu. Khi bấm Chọn ảnh, ứng dụng mở bộ chọn tệp trên Web hoặc thư viện ảnh trên Android. Ảnh đã chọn được hiển thị xem trước ngay trong form để người quản trị kiểm tra trước khi lưu.")
+    add_body(doc, "Ứng dụng đọc dữ liệu ảnh, sửa đúng chiều, thu nhỏ cạnh dài và nén JPEG trước khi mã hóa thành data URI. Khi bấm Thêm người dùng, chuỗi này được ghi vào trường hinhanh cùng email, matkhau và hoten; danh sách sau đó hiển thị ảnh đại diện từ dữ liệu Firebase.")
+    add_figure(doc, "08-chon-anh-nguoi-dung.png", "Hình 4  Ảnh đại diện đã được chọn và hiển thị xem trước trong form thêm người dùng", width=5.95)
 
     page_break(doc)
     heading(doc, "Sửa hồ sơ", 2)
