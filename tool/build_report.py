@@ -418,9 +418,9 @@ def build() -> None:
     page_break(doc)
 
     heading(doc, "Tóm tắt kết quả", 1)
-    add_body(doc, "Ứng dụng User Registry đã hoàn thành phần quản trị người dùng trên Web và Android. Hệ thống đăng nhập bằng Firebase Authentication, đồng bộ dữ liệu theo thời gian thực và thực hiện đủ thao tác thêm, hiển thị, sửa, xóa. Mỗi hồ sơ trong Realtime Database chỉ có bốn trường email, matkhau, hoten và hinhanh theo đúng yêu cầu đề bài.")
+    add_body(doc, "User Registry là ứng dụng quản lý người dùng xây dựng bằng Flutter cho Web và Android. Ứng dụng dùng Firebase Authentication để đăng nhập, Realtime Database để đồng bộ dữ liệu và hỗ trợ đầy đủ thao tác thêm, hiển thị, sửa, xóa. Mỗi hồ sơ chỉ gồm bốn trường email, matkhau, hoten và hinhanh.")
 
-    heading(doc, "Liên kết bàn giao", 2)
+    heading(doc, "Liên kết nộp bài", 2)
     links = [
         ("Web demo", "https://midtern-users-2026-htt1325.web.app/"),
         ("GitHub công khai", "https://github.com/htt1325abc/MidTernProject-Nov2026"),
@@ -436,26 +436,26 @@ def build() -> None:
     add_body(doc, "Tài khoản quản trị demo: admin@userhub.local", bold_lead="Tài khoản quản trị demo:")
     add_body(doc, "Mật khẩu demo: Admin@123", bold_lead="Mật khẩu demo:")
 
-    heading(doc, "Nội dung báo cáo", 2)
+    heading(doc, "Mục lục", 2)
     add_numbered(doc, [
         "Đối chiếu yêu cầu đề bài",
         "Công nghệ và kiến trúc hệ thống",
         "Thiết kế cơ sở dữ liệu",
-        "Các bước cài đặt và thực hiện",
+        "Cài đặt và triển khai",
         "Minh chứng chức năng",
-        "Kiểm thử, build và triển khai",
-        "Kết luận và danh mục nộp bài",
+        "Kiểm thử và kết quả build",
+        "Kết luận và tệp nộp",
     ])
 
     page_break(doc)
     heading(doc, "1 Đối chiếu yêu cầu đề bài", 1)
-    add_body(doc, "Đề yêu cầu xây dựng ứng dụng quản trị người dùng bằng Flutter, React Native hoặc .NET MAUI; dùng Firebase hoặc MongoDB; chạy trên Web và hỗ trợ giao diện di động. Dữ liệu chỉ được gồm bốn trường quy định. Bảng sau đối chiếu trực tiếp từng tiêu chí với phần đã triển khai.")
+    add_body(doc, "Ứng dụng được xây dựng bằng Flutter, dùng Firebase Realtime Database, chạy trên Web và Android, đồng thời giới hạn dữ liệu ở đúng bốn trường quy định.")
     add_table(doc, ["Tiêu chí", "Cách đáp ứng", "Minh chứng"], [
-        ["CSDL và Web 8,0 điểm", "Firebase Realtime Database; thêm và hiển thị email, matkhau, hoten, hinhanh; Web đã deploy.", "database.rules.json, firebase.json, link Hosting"],
-        ["Đăng nhập, sửa, xóa, nâng cao 1,5 điểm", "Firebase Authentication; sửa/xóa có xác nhận; tìm kiếm, sắp xếp, ẩn hiện mật khẩu, kiểm tra email trùng.", "Màn hình đăng nhập và dashboard"],
-        ["Ảnh và giao diện di động 0,5 điểm", "Chọn ảnh từ thiết bị, nén ảnh, lưu dạng data URI; layout chuyển từ bảng sang thẻ trên màn hình hẹp.", "image_picker, image, ảnh giao diện di động"],
-        ["Đúng bốn trường", "Model chỉ serialize email, matkhau, hoten, hinhanh. Firebase rules từ chối trường khác.", "user_record.dart và database.rules.json"],
-        ["Báo cáo và tệp CSDL", "Báo cáo có bước thực hiện, lệnh cài đặt, ảnh minh họa; kèm database.json.", "submission/"],
+        ["CSDL và Web 8,0 điểm", "Realtime Database; thêm và hiển thị đúng bốn trường; Web đã triển khai.", "Rules, cấu hình Firebase và Hosting"],
+        ["Đăng nhập và CRUD 1,5 điểm", "Đăng nhập quản trị; sửa, xóa có xác nhận; tìm kiếm, sắp xếp và ẩn hiện mật khẩu.", "Màn hình đăng nhập và dashboard"],
+        ["Ảnh và di động 0,5 điểm", "Chọn và nén ảnh; bố cục chuyển từ bảng sang thẻ trên màn hình hẹp.", "Ảnh form và giao diện di động"],
+        ["Đúng bốn trường", "Model chỉ ghi email, matkhau, hoten, hinhanh; Rules từ chối trường khác.", "user_record.dart và database.rules.json"],
+        ["Báo cáo và CSDL", "Có hướng dẫn, ảnh minh họa và tệp database.json.", "Thư mục submission"],
     ], [1.55, 3.0, 1.8], font_size=8.8)
 
     heading(doc, "Phạm vi chức năng", 2)
@@ -469,7 +469,7 @@ def build() -> None:
     ])
 
     heading(doc, "Ràng buộc dữ liệu", 2)
-    add_body(doc, "Firebase node key được dùng nội bộ để xác định bản ghi khi sửa hoặc xóa. Key không được serialize thành một trường dữ liệu. Phần đăng nhập quản trị nằm trong Firebase Authentication, tách khỏi dữ liệu hồ sơ người dùng.")
+    add_body(doc, "Firebase node key chỉ dùng để xác định bản ghi khi sửa hoặc xóa, không được lưu thành trường dữ liệu. Tài khoản quản trị do Firebase Authentication quản lý riêng.")
 
     page_break(doc)
     heading(doc, "2 Công nghệ và kiến trúc hệ thống", 1)
@@ -500,14 +500,14 @@ def build() -> None:
     set_table_borders(flow)
     set_column_widths(flow, [1.22, 1.0, 1.05, 1.45, 1.2])
     doc.add_paragraph()
-    add_body(doc, "AuthGate lắng nghe trạng thái đăng nhập. Sau khi xác thực thành công, UserRepository đọc node users bằng stream onValue. Các lệnh create, update và delete ghi trực tiếp vào Realtime Database; giao diện tự cập nhật khi dữ liệu thay đổi.")
+    add_body(doc, "AuthGate theo dõi trạng thái đăng nhập. Sau khi xác thực, UserRepository đọc node users bằng stream onValue. Các thao tác CRUD ghi trực tiếp vào Realtime Database và giao diện tự cập nhật khi dữ liệu thay đổi.")
 
     heading(doc, "Tổ chức mã nguồn", 2)
     add_code_block(doc, "lib/\n  app/                      Khởi tạo Firebase và điều hướng\n  core/                     Theme, validator, xử lý ảnh\n  features/auth/            Dịch vụ và màn hình đăng nhập\n  features/users/domain/    Model UserRecord\n  features/users/data/      UserRepository\n  features/users/presentation/ Dashboard, form, avatar\n  firebase_options.dart     Cấu hình Firebase Web và Android")
 
     page_break(doc)
     heading(doc, "3 Thiết kế cơ sở dữ liệu", 1)
-    add_body(doc, "Dữ liệu được lưu tại node /users. Mỗi child là một hồ sơ có key do Firebase tạo. Giá trị của child chỉ gồm bốn trường bắt buộc sau.")
+    add_body(doc, "Dữ liệu nằm tại node /users. Mỗi hồ sơ có một key do Firebase tạo và chỉ chứa bốn trường sau.")
     add_table(doc, ["Trường", "Kiểu", "Ý nghĩa", "Kiểm tra"], [
         ["email", "String", "Email người dùng", "Định dạng email, không trùng"],
         ["matkhau", "String", "Mật khẩu theo yêu cầu đề", "Tối thiểu 6 ký tự"],
@@ -522,11 +522,11 @@ def build() -> None:
 
     page_break(doc)
     heading(doc, "Quy tắc bảo vệ dữ liệu", 2)
-    add_body(doc, "Database Rules yêu cầu người dùng đã đăng nhập mới được đọc hoặc ghi. Quy tắc validate kiểm tra đủ bốn trường và chỉ chấp nhận tên trường nằm trong danh sách của đề bài.")
+    add_body(doc, "Database Rules chỉ cho phép tài khoản đã đăng nhập đọc hoặc ghi, đồng thời kiểm tra đủ bốn trường và từ chối trường ngoài quy định.")
     add_code_block(doc, '"users": {\n  ".read": "auth != null",\n  ".write": "auth != null",\n  ".indexOn": ["email"],\n  "$userId": {\n    ".validate": "newData.hasChildren([\'email\', \'matkhau\', \'hoten\', \'hinhanh\'])",\n    "$field": {\n      ".validate": "($field == \'email\' ...) || ($field == \'matkhau\' ...) ||\n                    ($field == \'hoten\' ...) || ($field == \'hinhanh\' ...)"\n    }\n  }\n}')
-    add_body(doc, "Lưu ý bảo mật: trường matkhau tồn tại vì đề bài bắt buộc. Tài khoản quản trị thật vẫn do Firebase Authentication quản lý. Trong hệ thống sản xuất, mật khẩu người dùng không nên lưu dưới dạng văn bản rõ trong cơ sở dữ liệu ứng dụng.")
+    add_body(doc, "Trường matkhau được giữ theo yêu cầu đề bài. Trong hệ thống thực tế, mật khẩu không nên lưu dưới dạng văn bản rõ; tài khoản quản trị của ứng dụng này vẫn do Firebase Authentication quản lý.")
 
-    heading(doc, "4 Các bước cài đặt và thực hiện", 1)
+    heading(doc, "4 Cài đặt và triển khai", 1)
     heading(doc, "Chuẩn bị môi trường", 2)
     add_numbered(doc, [
         "Cài Flutter SDK 3.47 trở lên, Android SDK và Chrome.",
@@ -548,37 +548,34 @@ def build() -> None:
 
     heading(doc, "5 Minh chứng chức năng", 1)
     heading(doc, "Đăng nhập quản trị", 2)
-    add_body(doc, "Màn hình yêu cầu email và mật khẩu. Firebase Authentication xác thực tài khoản trước khi mở dashboard. Khi đăng nhập thất bại, ứng dụng chuyển mã lỗi Firebase thành thông báo tiếng Việt.")
+    add_body(doc, "Firebase Authentication xác thực email và mật khẩu trước khi mở trang quản trị. Lỗi đăng nhập được hiển thị bằng tiếng Việt.")
     add_figure(doc, "01-dang-nhap.png", "Hình 2  Màn hình đăng nhập trên bản Web đã deploy", width=6.45)
 
     page_break(doc)
     heading(doc, "Danh sách và thao tác quản trị", 2)
-    add_body(doc, "Dashboard hiển thị dữ liệu theo thời gian thực. Thanh công cụ cho phép tìm kiếm, sắp xếp, ẩn hiện mật khẩu và mở form thêm người dùng. Mỗi dòng có nút sửa và xóa.")
-    add_figure(doc, "02-danh-sach.png", "Hình 3  Dashboard với ba hồ sơ đang đồng bộ từ Firebase", width=6.45)
+    add_body(doc, "Danh sách cập nhật theo thời gian thực và hỗ trợ tìm kiếm, sắp xếp, ẩn hiện mật khẩu, thêm, sửa và xóa hồ sơ.")
+    add_figure(doc, "02-danh-sach.png", "Hình 3  Danh sách người dùng đồng bộ từ Firebase", width=5.9)
 
-    page_break(doc)
     heading(doc, "Thêm hồ sơ và chọn ảnh", 2)
-    add_body(doc, "Form thêm mới yêu cầu đủ họ tên, email và mật khẩu. Khi bấm Chọn ảnh, ứng dụng mở bộ chọn tệp trên Web hoặc thư viện ảnh trên Android. Ảnh đã chọn được hiển thị xem trước ngay trong form để người quản trị kiểm tra trước khi lưu.")
-    add_body(doc, "Ứng dụng đọc dữ liệu ảnh, sửa đúng chiều, thu nhỏ cạnh dài và nén JPEG trước khi mã hóa thành data URI. Khi bấm Thêm người dùng, chuỗi này được ghi vào trường hinhanh cùng email, matkhau và hoten; danh sách sau đó hiển thị ảnh đại diện từ dữ liệu Firebase.")
-    add_figure(doc, "08-chon-anh-nguoi-dung.png", "Hình 4  Ảnh đại diện đã được chọn và hiển thị xem trước trong form thêm người dùng", width=5.95)
+    add_body(doc, "Người quản trị nhập họ tên, email, mật khẩu và chọn ảnh từ thiết bị. Ảnh được sửa chiều, thu nhỏ, nén JPEG, hiển thị xem trước và mã hóa thành data URI trước khi lưu vào trường hinhanh.")
+    add_figure(doc, "08-chon-anh-nguoi-dung.png", "Hình 4  Ảnh đại diện hiển thị xem trước trong form thêm người dùng", width=4.6)
 
     page_break(doc)
     heading(doc, "Sửa hồ sơ", 2)
-    add_body(doc, "Khi người quản trị chọn biểu tượng sửa, form tải dữ liệu hiện tại theo Firebase node key. Lệnh lưu ghi lại đúng bốn trường của model. Repository loại trừ key hiện tại khi kiểm tra email trùng.")
-    add_figure(doc, "04-sua-nguoi-dung.png", "Hình 5  Form cập nhật hồ sơ đã nạp dữ liệu hiện tại", width=6.35)
+    add_body(doc, "Form sửa tải dữ liệu theo Firebase node key, kiểm tra email trùng và ghi lại đúng bốn trường của hồ sơ.")
+    add_figure(doc, "04-sua-nguoi-dung.png", "Hình 5  Form cập nhật hồ sơ", width=4.9)
 
-    page_break(doc)
     heading(doc, "Xóa hồ sơ", 2)
-    add_body(doc, "Ứng dụng hiển thị tên người dùng và cảnh báo thao tác không thể hoàn tác. Chỉ khi người quản trị bấm Xóa hồ sơ, repository mới gọi remove trên node tương ứng.")
-    add_figure(doc, "05-xac-nhan-xoa.png", "Hình 6  Hộp thoại xác nhận trước khi xóa dữ liệu", width=5.95)
+    add_body(doc, "Ứng dụng yêu cầu xác nhận trước khi xóa node tương ứng khỏi Realtime Database.")
+    add_figure(doc, "05-xac-nhan-xoa.png", "Hình 6  Xác nhận trước khi xóa dữ liệu", width=4.9)
 
     page_break(doc)
     heading(doc, "Giao diện di động", 2)
-    add_body(doc, "Trên màn hình hẹp, sidebar và bảng được thay bằng thanh tiêu đề gọn và các thẻ hồ sơ. Nút thêm người dùng được đặt cố định ở cạnh dưới để thao tác thuận tiện. APK Android sử dụng cùng layout responsive và cùng lớp repository.")
+    add_body(doc, "Trên màn hình hẹp, danh sách dạng bảng chuyển thành các thẻ hồ sơ. APK Android dùng cùng bố cục thích ứng và lớp dữ liệu với bản Web.")
     add_figure(doc, "06-giao-dien-di-dong.png", "Hình 7  Danh sách dạng thẻ trên khung nhìn di động", width=3.05)
 
     page_break(doc)
-    heading(doc, "6 Kiểm thử build và triển khai", 1)
+    heading(doc, "6 Kiểm thử và kết quả build", 1)
     heading(doc, "Kết quả kiểm tra mã nguồn", 2)
     add_table(doc, ["Lệnh", "Kết quả", "Phạm vi"], [
         ["flutter analyze", "Không có lỗi", "Lint và phân tích tĩnh toàn project"],
@@ -590,10 +587,10 @@ def build() -> None:
 
     heading(doc, "Kiểm thử dữ liệu", 2)
     add_bullets(doc, [
-        "Model đọc map Firebase và chỉ serialize bốn trường được phép.",
+        "Model đọc dữ liệu Firebase và chỉ ghi bốn trường được phép.",
         "Validator từ chối họ tên quá ngắn, email sai định dạng và mật khẩu dưới sáu ký tự.",
         "Firebase Rules yêu cầu auth != null và kiểm tra kiểu dữ liệu từng trường.",
-        "Repository đọc stream, sắp xếp theo họ tên và trả thông báo dễ hiểu khi mất quyền hoặc mất mạng.",
+        "Repository đồng bộ dữ liệu, sắp xếp theo họ tên và báo lỗi khi mất quyền hoặc mất mạng.",
     ])
 
     heading(doc, "Thông tin bản phát hành", 2)
@@ -603,41 +600,21 @@ def build() -> None:
         ["Dung lượng", "Khoảng 55,0 MB"],
         ["SHA256", "aea2f37cfff06cf4eedb1bdd2a179f58f6a89fa7d127528cd6b6dbd31351f9f5"],
         ["Hosting", "midtern-users-2026-htt1325.web.app"],
-        ["Firebase region", "asia-southeast1"],
+        ["Khu vực Firebase", "asia-southeast1"],
     ], [1.55, 4.8], font_size=9)
 
     page_break(doc)
-    heading(doc, "7 Kết luận và danh mục nộp bài", 1)
-    add_body(doc, "User Registry đáp ứng các tiêu chí chức năng của đề: chạy trên Web, có bản Android, đăng nhập quản trị, CRUD người dùng, chọn và hiển thị ảnh, giao diện responsive và các chức năng tìm kiếm, sắp xếp, ẩn hiện mật khẩu. Cấu trúc dữ liệu được khóa ở đúng bốn trường bằng cả model và Firebase Rules.")
+    heading(doc, "7 Kết luận và tệp nộp", 1)
+    add_body(doc, "Ứng dụng đáp ứng yêu cầu về nền tảng, cơ sở dữ liệu, đăng nhập, CRUD, hình ảnh và giao diện di động. Model và Firebase Rules cùng giới hạn mỗi hồ sơ ở đúng bốn trường quy định.")
 
-    heading(doc, "Danh mục tệp quan trọng", 2)
-    add_table(doc, ["Tệp hoặc thư mục", "Nội dung"], [
-        ["lib/", "Toàn bộ mã nguồn Flutter"],
-        ["database.rules.json", "Quyền đọc ghi và validate dữ liệu"],
-        ["firebase.json", "Cấu hình Hosting, Database và Emulator"],
-        ["submission/database.json", "Tệp cơ sở dữ liệu JSON nộp kèm"],
-        ["submission/Bao_cao_User_Registry.docx", "Báo cáo chi tiết"],
-        ["submission/user-registry-demo.mp4", "Video demo Web và giao diện di động"],
-        ["test/", "Kiểm thử model, validator và widget"],
-    ], [2.6, 3.75], font_size=9.2)
-
-    heading(doc, "Checklist trước khi nộp", 2)
-    add_bullets(doc, [
-        "Mở link Web và đăng nhập bằng tài khoản demo.",
-        "Kiểm tra thao tác thêm, sửa, xóa và chọn ảnh.",
-        "Tải thử APK từ GitHub Release.",
-        "Đính kèm file database.json và báo cáo Word.",
-        "Mở thử link video demo công khai trên GitHub Release.",
-    ])
-
-    heading(doc, "Kịch bản video demo đề xuất", 2)
-    add_numbered(doc, [
-        "Giới thiệu repository, link Web và cấu trúc bốn trường trong Firebase.",
-        "Đăng nhập quản trị và giải thích dashboard.",
-        "Thêm một hồ sơ có ảnh; tìm kiếm hồ sơ vừa tạo.",
-        "Sửa thông tin, bật hiển thị mật khẩu và sắp xếp danh sách.",
-        "Xóa hồ sơ thử nghiệm, sau đó mở giao diện di động hoặc APK Android.",
-    ])
+    heading(doc, "Danh mục nộp bài", 2)
+    add_table(doc, ["Hạng mục", "Tệp hoặc liên kết"], [
+        ["Mã nguồn", "GitHub công khai MidTernProject-Nov2026"],
+        ["Cơ sở dữ liệu", "submission/database.json"],
+        ["Báo cáo", "submission/Bao_cao_User_Registry.docx"],
+        ["Video demo", "submission/user-registry-demo.mp4 và GitHub Release"],
+        ["Ứng dụng Android", "user-registry.apk trên GitHub Release"],
+    ], [2.0, 4.35], font_size=9.5)
 
     doc.core_properties.title = "Báo cáo xây dựng ứng dụng quản lý người dùng"
     doc.core_properties.subject = "Lập trình đa nền tảng với Flutter và Firebase"
