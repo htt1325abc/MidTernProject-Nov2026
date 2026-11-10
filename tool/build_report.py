@@ -424,6 +424,7 @@ def build() -> None:
     links = [
         ("Web demo", "https://midtern-users-2026-htt1325.web.app/"),
         ("GitHub công khai", "https://github.com/htt1325abc/MidTernProject-Nov2026"),
+        ("Video demo", "https://github.com/htt1325abc/MidTernProject-Nov2026/releases/latest/download/user-registry-demo.mp4"),
         ("Android APK", "https://github.com/htt1325abc/MidTernProject-Nov2026/releases/latest/download/user-registry.apk"),
     ]
     for label, url in links:
@@ -615,6 +616,7 @@ def build() -> None:
         ["firebase.json", "Cấu hình Hosting, Database và Emulator"],
         ["submission/database.json", "Tệp cơ sở dữ liệu JSON nộp kèm"],
         ["submission/Bao_cao_User_Registry.docx", "Báo cáo chi tiết"],
+        ["submission/user-registry-demo.mp4", "Video demo Web và giao diện di động"],
         ["test/", "Kiểm thử model, validator và widget"],
     ], [2.6, 3.75], font_size=9.2)
 
@@ -624,7 +626,7 @@ def build() -> None:
         "Kiểm tra thao tác thêm, sửa, xóa và chọn ảnh.",
         "Tải thử APK từ GitHub Release.",
         "Đính kèm file database.json và báo cáo Word.",
-        "Quay video demo, tải lên dịch vụ chia sẻ và bổ sung link khi nộp bài.",
+        "Mở thử link video demo công khai trên GitHub Release.",
     ])
 
     heading(doc, "Kịch bản video demo đề xuất", 2)

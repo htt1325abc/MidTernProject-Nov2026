@@ -4,6 +4,7 @@
 Authentication và Firebase Realtime Database.
 
 - Web demo: https://midtern-users-2026-htt1325.web.app
+- Video demo: https://github.com/htt1325abc/MidTernProject-Nov2026/releases/latest/download/user-registry-demo.mp4
 - Android APK: https://github.com/htt1325abc/MidTernProject-Nov2026/releases/latest/download/user-registry.apk
 - GitHub: https://github.com/htt1325abc/MidTernProject-Nov2026
 - Báo cáo Word: [submission/Bao_cao_User_Registry.docx](submission/Bao_cao_User_Registry.docx)
