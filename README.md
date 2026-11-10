@@ -4,7 +4,7 @@
 Authentication và Firebase Realtime Database.
 
 - Web demo: https://midtern-users-2026-htt1325.web.app
-- Android APK: https://github.com/htt1325abc/MidTernProject-Nov2026/releases/download/v1.0.0/user-registry.apk
+- Android APK: https://github.com/htt1325abc/MidTernProject-Nov2026/releases/latest/download/user-registry.apk
 - GitHub: https://github.com/htt1325abc/MidTernProject-Nov2026
 - Tài khoản quản trị demo: `admin@userhub.local`
 - Mật khẩu demo: `Admin@123`
