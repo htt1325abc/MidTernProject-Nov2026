@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": ["email"],
+      "$userId": {
+        ".validate": "newData.hasChildren(['email', 'matkhau', 'hoten', 'hinhanh'])",
+        "$field": {
+          ".validate": "($field == 'email' && newData.isString() && newData.val().length > 3) || ($field == 'matkhau' && newData.isString() && newData.val().length >= 6) || ($field == 'hoten' && newData.isString() && newData.val().length > 1) || ($field == 'hinhanh' && newData.isString())"
+        }
+      }
+    }
+  }
+}

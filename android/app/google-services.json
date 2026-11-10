@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "563256527342",
+    "project_id": "midtern-users-2026-htt1325",
+    "storage_bucket": "midtern-users-2026-htt1325.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563256527342:android:1b920524d458f74fb026ff",
+        "android_client_info": {
+          "package_name": "com.huynhtuantu.midtern_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRMXRZLk1Q0AXvXq9lEybh3nuhXVGlA2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

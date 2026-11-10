@@ -1,0 +1,16 @@
+{
+  "users": {
+    "sample-nguyen-thi-lan": {
+      "email": "lan.nguyen@example.com",
+      "matkhau": "Lan@12345",
+      "hoten": "Nguyễn Thị Lan",
+      "hinhanh": ""
+    },
+    "sample-tran-van-minh": {
+      "email": "minh.tran@example.com",
+      "matkhau": "Minh@12345",
+      "hoten": "Trần Văn Minh",
+      "hinhanh": ""
+    }
+  }
+}
