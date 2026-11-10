@@ -36,6 +36,7 @@ migrate_working_dir/
 /artifacts/
 /coverage/
 /.firebase/
+**/.~lock.*#
 
 # Symbolication related
 app.*.symbols
